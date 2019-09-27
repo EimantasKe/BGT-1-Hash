@@ -4,3 +4,12 @@
 	<string>
 	<fstream>
 
+1569581710 source:u:\desktop\bgt\hash\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<string>
+	<sstream>
+	<cstring>
+	<cstdlib>
+
