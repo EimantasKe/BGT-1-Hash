@@ -45,7 +45,7 @@ skaičiavimas trunka apie 5s
 
 
 Nuskaitomas failas: konstitucija.txt.
-PASTABA: programa nepalaiko lietuviškų raidžių.
+PASTABA: programa neatpažysta lietuviškų raidžių, tačiau supranta kad jos skiriasi nuo paprastų, bei kad skiriasi tarpusavį
 Code::Blocks su GNU GCC kompileriu gauna tokį rezultatą po kompiliacijos :
 Jei rezultatai yra spausdinami: "Process returned 0 (0x0)   execution time : 1.023 s"
 Jei rezultatai nėra spausdinami: "Process returned 0 (0x0)   execution time : 0.122 s"
