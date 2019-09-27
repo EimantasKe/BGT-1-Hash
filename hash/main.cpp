@@ -4,6 +4,8 @@
 #include <string>
 #include <sstream>
 #include <cstring>
+#include <cstdlib>
+
 
 using namespace std;
 
@@ -23,14 +25,16 @@ int main(int argc, char* argv[])
         string string2;
         ifstream ifile(argv[1]);
 
-
         if (ifile.is_open()) {
             if(strcmp("data5.txt",argv[1])==0){
                 int identical_pair_count = 0;
                 while (!ifile.eof()) {
                     getline(ifile,string1);
                     getline(ifile,string2);
-                    if(string1.compare(string2)==0){
+                    /*cout<<endl<<string1<<endl<<string2<<endl;
+                    cout<<hash_function(string1)<<endl<<hash_function(string2)<<endl;*/
+
+                    if(hash_function(string1).compare(hash_function(string2))==0){
                         identical_pair_count += 1;
                     }
                 }
@@ -38,18 +42,14 @@ int main(int argc, char* argv[])
             }else if(strcmp("konstitucija.txt",argv[1])==0){
                 while (!ifile.eof()) {
                     getline(ifile,string1);
-                    //cout<<hash_function(string1)<<endl;
+                    cout<<hash_function(string1)<<endl;
                 }
             }else{
                 getline(ifile,string1);
                 cout<<"Input: "<<string1<<endl;
                 cout<<"Output: "<<hash_function(string1)<<endl;
             }
-
         }
-
-
-
 
         ifile.close();
     }else if(argc==3){
@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
         cout<<"Output1: "<<hash_function(strings[0])<<endl;
         cout<<"Output2: "<<hash_function(strings[1])<<endl;
 
-        if(strcmp(strings[0].c_str(),strings[1].c_str())==0){
+        if(strcmp(hash_function(strings[0]).c_str(),hash_function(strings[1]).c_str())==0){
             cout<<"Sutampa"<<endl;
         }else{
             cout<<"Nesutampa"<<endl;
@@ -98,23 +98,22 @@ string hash_function(string input){
     for(int i = 0; i < 20; i++){
         pepper1_array[i]=atoi((pepper1.substr(38-i*2,2)).c_str());
         pepper2_array[i]=atoi((pepper2.substr(38-i*2,2)).c_str());
-        output_array[i]=(((pepper1_array[i] * string_length)%32) + ((pepper2_array[i]*string_value)%32))%32;
+        output_array[i]=(((pepper1_array[i] * string_length)%128) + ((pepper2_array[i]*string_value)%128))%256;
     }
 
     for(int i = 0; i < string_length; i++){
         I=i%20;
-        output_array[I]=(output_array[I]+input[i])%32;
+        output_array[I]=(output_array[I]+(unsigned int)input[i])%256;
     }
 
     stringstream sstream;
     for(int i = 0; i < 20; i++){
             if(output_array[i]<0x10){
-                sstream << std::hex << 0<<output_array[i];
+                sstream << std::hex <<0<<output_array[i];
             }else{
                 sstream << std::hex << output_array[i];
             }
     }
-
     output= sstream.str();
     return output;
 }
