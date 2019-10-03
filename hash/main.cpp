@@ -24,11 +24,11 @@ int main(int argc, char* argv[])
     if(argc==1){
         cout<<"Pasirinkimai: "<<endl;
         cout<<"1. Testas '1' - 2 failai po viena simboli"<<endl;
-        cout<<"2. Testas '2' - 2 failai po "<<endl;
-        cout<<"3. Testas '3' - 2 failai"<<endl;
+        cout<<"2. Testas '2' - 2 failai po 100,000 simboliu "<<endl;
+        cout<<"3. Testas '3' - 2 failai po 100,000 simboliu, bet skiriasi tik 1 simboliu"<<endl;
         cout<<"4. Testas '4' - tuscias failas (jei neveikia, failas pradingo)"<<endl;
-        cout<<"5. Testas '5' - tikrinamos poros"<<endl;
-        cout<<"6. Testas '6' - tikrinamos poros"<<endl;
+        cout<<"5. Testas '5' - tikrinamos 100,000 poru"<<endl;
+        cout<<"6. Testas '6' - tikrinamos 200,000 poru, kurios skiriasi 1 simboliu"<<endl;
         cout<<"7. Testas 'Konstitucija' - nuskaitomas konstitucija.txt failas (greiti matuot paduodant tiesiai i argumenta)"<<endl;
         cout<<"8. Irasyti savo teksto eilute"<<endl;
         cout<<"---------"<<endl;
