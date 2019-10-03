@@ -3,6 +3,7 @@
 1 užduotis
 
 failai: data2a.txt, data2b.txt, data3a.txt, data3b.txt, data5.txt buvo sugeneruoti https://www.random.org/strings/, bei http://www.unit-conversion.info/texttools/random-string-generator/ pagalba.
+data6.txt sugeneruotas su test6generator, naudojant data5.txt
 
 
 Nuskaitomi failai: data1a.txt ir data1b.txt.
