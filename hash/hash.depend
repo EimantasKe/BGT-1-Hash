@@ -13,3 +13,12 @@
 	<cstring>
 	<cstdlib>
 
+1570138262 source:c:\users\eimantas\desktop\bloku-grandiniu-technologijos-master\bloku-grandiniu-technologijos-master\hash\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<cstring>
+	<cstdlib>
+	<iomanip>
+
