@@ -22,3 +22,12 @@
 	<cstdlib>
 	<iomanip>
 
+1570183304 source:u:\desktop\bgt\1 uzduotis\final\hash\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	<cstring>
+	<cstdlib>
+	<iomanip>
+

@@ -17,6 +17,8 @@ void test5(string file); //data5
 void test6(string file); //data6
 void konstitucija(string file); //konstitucija.txt
 
+void test_one_arg(string input);
+
 int main(int argc, char* argv[])
 {
     string input;
@@ -81,7 +83,8 @@ int main(int argc, char* argv[])
         }else if(strcmp("data6.txt",argv[1])==0){
             test6("data6.txt");
         }else{
-            test_one_file(argv[1]);
+            //test_one_file(argv[1]);
+            test_one_arg(argv[1]);
         }
     }else if(argc==3){
         test_two_files(argv[1],argv[2]);
@@ -173,7 +176,7 @@ string hextobin(string s){
 }
 
 void test5(string file){
-    ifstream ifile(file);
+    ifstream ifile(file.c_str());
     string string1,string2;
     int identical_pair_count = 0;
     while (!ifile.eof()) {
@@ -191,7 +194,7 @@ void test5(string file){
 }
 
 void konstitucija(string file){
-    ifstream ifile(file);
+    ifstream ifile(file.c_str());
     string string1;
     while (!ifile.eof()) {
         getline(ifile,string1);
@@ -201,7 +204,7 @@ void konstitucija(string file){
 }
 
 void test6(string file){
-    ifstream ifile(file);
+    ifstream ifile(file.c_str());
     string string1, string2, string1h, string2h, string1b,string2b, string3b, string4b;
     int overlapping_bits=0;
     float total_overlapping_bits=0;
@@ -239,7 +242,7 @@ void test6(string file){
 }
 
 void test_one_file(string file1){
-    ifstream ifile(file1);
+    ifstream ifile(file1.c_str());
     string string1;
     getline(ifile,string1);
     cout<<"Input: "<<string1<<endl;
@@ -247,11 +250,17 @@ void test_one_file(string file1){
     ifile.close();
 }
 
+void test_one_arg(string input){
+    //cout<<"Input: "<<input<<endl;
+    //cout<<"Output: "<<hash_function(input)<<endl;
+    cout<<hash_function(input)<<endl;
+}
+
 void test_two_files(string file1, string file2){
         string string1;
         string string2;
-        ifstream ifile(file1);
-        ifstream i2file(file2);
+        ifstream ifile(file1.c_str());
+        ifstream i2file(file2.c_str());
         getline(ifile,string1);
         getline(i2file,string2);
         cout<<"Input1: "<<string1<<endl;
