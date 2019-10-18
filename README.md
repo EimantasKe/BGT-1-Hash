@@ -1,4 +1,4 @@
-# Bloku-grandiniu-technologijos
+# Bloku-grandiniu-technologijos - 1 užduotis - Hash
 
 1 užduotis
 
